@@ -1,4 +1,5 @@
 const api = require('../api');
+const inviteApi = require('../inviteApi');
 
 function users(config) {
   return {
@@ -13,11 +14,11 @@ function users(config) {
     invites: {
       save: (params) => {
         const url = `${config.apiURL}/invites`;
-        return api(url, config, 'POST', params);
+        return inviteApi(url, config, 'POST', params);
       },
       retrieve: (params) => {
         const url = `${config.apiURL}/invites`;
-        return api(url, config, 'GET', params);
+        return inviteApi(url, config, 'GET', params);
       },
     },
     me: {
