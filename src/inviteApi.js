@@ -7,20 +7,7 @@ async function inviteApi(baseUrl, config, method, params) {
   );
   const authHeader = `Basic ${auth}`;
   const options = { method, headers: { Authorization: authHeader } };
-  if (method === 'POST' && url.pathname.includes("/invites")) {
-    Object.entries(params).forEach(([key, value]) => {
-      url.searchParams.append(key, value);
-    });
-  } else if (method === 'POST') {
-    options.body = new helper.FormData();
-    Object.keys(params).forEach((key) => {
-      let data = params[key];
-      if (Array.isArray(data)) {
-        data = JSON.stringify(data);
-      }
-      options.body.append(key, data);
-    });
-  } else if (params) {
+  if (method === 'POST') {
     Object.entries(params).forEach(([key, value]) => {
       url.searchParams.append(key, value);
     });

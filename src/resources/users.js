@@ -20,6 +20,14 @@ function users(config) {
         const url = `${config.apiURL}/invites`;
         return inviteApi(url, config, 'GET', params);
       },
+      resend: (params) => {
+        const url = `${config.apiURL}/invites/${params.id}/resend`;
+        return inviteApi(url, config, 'GET', params);
+      },
+      rewoke: (params) => {
+        const url = `${config.apiURL}/invites/${params.id}`;
+        return inviteApi(url, config, 'DELETE', params);
+      }
     },
     me: {
       pointer: {
