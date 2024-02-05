@@ -11,6 +11,10 @@ function users(config) {
       const url = `${config.apiURL}/users`;
       return api(url, config, 'POST', params);
     },
+    deactivate: (params) => {
+      const url = `${config.apiURL}/users/params.id`;
+      return api(url, config, 'DELETE', params);
+    },
     invites: {
       save: (params) => {
         const url = `${config.apiURL}/invites`;
