@@ -32,7 +32,7 @@ function users(config) {
         const url = `${config.apiURL}/invites/${params.id}/resend`;
         return inviteApi(url, config, 'POST', params);
       },
-      rewoke: (params) => {
+      revoke: (params) => {
         const url = `${config.apiURL}/invites/${params.id}`;
         return inviteApi(url, config, 'DELETE', params);
       }
@@ -46,6 +46,10 @@ function users(config) {
         update: (id) => {
           const url = `${config.apiURL}/users/me/pointer`;
           return api(url, config, 'POST', { pointer: id });
+        },
+        delete: (params) => {
+          const url = `${config.apiURL}/users/me##CAREFUL##`;
+          return api(url, config, 'DELETE', params);
         },
       },
       getProfile: () => {
