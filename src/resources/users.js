@@ -12,11 +12,11 @@ function users(config) {
       return api(url, config, 'POST', params);
     },
     deactivate: (params) => {
-      const url = `${config.apiURL}/users/params.id`;
+      const url = `${config.apiURL}/users/${params.id}`;
       return api(url, config, 'DELETE', params);
     },
     update: (params) => {
-      const url = `${config.apiURL}/users/params.id`;
+      const url = `${config.apiURL}/users/${params.id}`;
       return api(url, config, 'PATCH', params);
     },
     invites: {
