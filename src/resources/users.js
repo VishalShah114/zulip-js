@@ -47,14 +47,14 @@ function users(config) {
           const url = `${config.apiURL}/users/me/pointer`;
           return api(url, config, 'POST', { pointer: id });
         },
-        delete: (params) => {
-          const url = `${config.apiURL}/users/me##CAREFUL##`;
-          return api(url, config, 'DELETE', params);
-        },
       },
       getProfile: () => {
         const url = `${config.apiURL}/users/me`;
         return api(url, config, 'GET');
+      },
+      delete: (params) => {
+        const url = `${config.apiURL}/users/me##CAREFUL##`;
+        return api(url, config, 'DELETE', params);
       },
       subscriptions: {
         add: (params) => {
