@@ -30,7 +30,7 @@ function users(config) {
       },
       resend: (params) => {
         const url = `${config.apiURL}/invites/${params.id}/resend`;
-        return inviteApi(url, config, 'GET', params);
+        return inviteApi(url, config, 'POST', params);
       },
       rewoke: (params) => {
         const url = `${config.apiURL}/invites/${params.id}`;
