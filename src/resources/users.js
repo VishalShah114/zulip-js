@@ -35,6 +35,46 @@ function users(config) {
       revoke: (params) => {
         const url = `${config.apiURL}/invites/${params.id}`;
         return inviteApi(url, config, 'DELETE', params);
+      },
+    },
+    groups: {
+      retrieve: (params) => {
+        const url = `${config.apiURL}/user_groups`;
+        return api(url, config, 'GET', params);
+      },
+      create: (params) => {
+        const url = `${config.apiURL}/user_groups/create`;
+        return api(url, config, 'POST', params);
+      },
+      update: (params) => {
+        const url = `${config.apiURL}/user_groups/${params.id}`;
+        return api(url, config, 'PATCH', params);
+      },
+      delete: (params) => {
+        const url = `${config.apiURL}/user_groups/${params.id}`;
+        return api(url, config, 'DELETE', params);
+      },
+      members: {
+        upsate: (params) => {
+          const url = `${config.apiURL}/user_groups/${params.id}/members`;
+          return api(url, config, 'POST', params);
+        },
+        status: (params) => {
+          const url = `${config.apiURL}/user_groups/${params.id}/members/${params.memberId}`;
+          return api(url, config, 'GET', params);
+        },
+        retrieve: (params) => {
+          const url = `${config.apiURL}/user_groups/${params.id}/members`;
+          return api(url, config, 'GET', params);
+        },
+      },
+      updateSubgroups: (params) => {
+        const url = `${config.apiURL}/user_groups/${params.id}/subgroups`;
+        return api(url, config, 'POST', params);
+      },
+      getSubgroups: (params) => {
+        const url = `${config.apiURL}/user_groups/${params.id}/subgroups`;
+        return api(url, config, 'GET', params);
       }
     },
     me: {
