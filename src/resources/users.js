@@ -55,7 +55,7 @@ function users(config) {
         return api(url, config, 'DELETE', params);
       },
       members: {
-        upsate: (params) => {
+        update: (params) => {
           const url = `${config.apiURL}/user_groups/${params.id}/members`;
           return api(url, config, 'POST', params);
         },
